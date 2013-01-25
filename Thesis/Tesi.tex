@@ -1,0 +1,130 @@
+              %******************************************%
+              %                                          %
+              % Modello di tesi di laurea o di dottorato %
+              %            di Lorenzo Pantieri ©         %
+              %                                          %
+              %         versione: 4 luglio 2012          %
+              %                                          %
+              %******************************************%
+       
+
+% I seguenti commenti speciali impostano:
+% 1. utf8 come codifica di input,
+% 2. PDFLaTeX come motore di composizione;
+% 3. Tesi.tex come documento principale;
+% 4. il controllo ortografico italiano per l'editor.
+
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = Tesi.tex
+% !TEX spellcheck = it-IT
+
+\documentclass[11pt,%                      % corpo del font principale
+               a4paper,%                   % carta A4
+%               twoside,openright,%         % fronte-retro
+               oneside,openany,%           % solo fronte
+               titlepage,%                 % frontespizio
+               headinclude,,footinclude,%  % testatina e piede di pagina
+               BCOR5mm,%                   % rilegatura di 5 mm
+               cleardoublepage=empty,%     % pagine vuote senza testatina e piede di pagina
+               tablecaptionabove,%         % didascalie in cima alle tabelle
+               ]{scrreprt}                 % classe report di KOMA-Script;
+               
+\usepackage[T1]{fontenc}                   % codifica dei font:
+                                           % NOTA BENE! richiede una distribuzione *completa* di LaTeX,
+                                           % per esempio TeXLive o MiKTeX *complete*
+
+\usepackage[utf8]{inputenc}                % codifica di input; anche [latin1] va bene
+                                           % NOTA BENE! va accordata con le preferenze dell'editor
+
+\usepackage[english,italian]{babel}        % per scrivere in italiano e in inglese;
+                                           % l'ultima lingua (l'italiano) risulta predefinita
+
+\usepackage[suftesi]{frontespizio}         % frontespizo
+                                           % per includerlo nel documento bisogna:
+                                           % 1. compilare una prima volta Tesi.tex;
+                                           % 2. compilare a parte Tesi-frn.tex, generato dalla compilazione precedente;
+                                           % 3. compilare ancora Tesi.tex. 
+
+\usepackage{indentfirst}                   % rientra il primo paragrafo di ogni sezione
+
+\usepackage{graphicx}                      % immagini
+
+\usepackage{listings}                      % codici
+
+\usepackage[font=small]{quoting}           % citazioni
+
+\usepackage{amsmath,amssymb,amsthm}        % matematica
+
+\usepackage[italian]{varioref}             % riferimenti completi della pagina
+
+\usepackage{mparhack,fixltx2e,relsize}     % finezze tipografiche
+
+\usepackage{tabularx}                      % tabelle di larghezza prefissata
+
+\usepackage[style=philosophy-modern,hyperref,backref,square,natbib]{biblatex}
+                                           % eccellente pacchetto per la bibliografia;
+                                           % produce uno stile di citazione autore-anno; 
+                                           % lo stile "numeric-comp" produce riferimenti numerici
+                                          
+\bibliography{Bibliografia}                % database di biblatex 
+                                          
+\usepackage{subfig}                        % sottofigure, sottotabelle
+
+\usepackage{lipsum}                        % testo fittizio
+
+\usepackage{eurosym}                       % simbolo dell'euro
+
+\usepackage[eulerchapternumbers,%          % numeri dei capitoli nel font Euler
+            subfig,%                       % se si usa il pacchetto subfig
+            beramono,%                     % Bera Mono come font a spaziatura fissa
+            eulermath,%                    % AMS Euler come font per la matematica
+            pdfspacing,%                   % migliora il riempimento di riga
+            listings,%                     % codici
+%           parts,%                        % da decommentare in un documento diviso in parti
+            ]{classicthesis}               % stile ClassicThesis
+
+\usepackage{arsclassica}                   % modifica alcuni aspetti di ClassicThesis
+
+\usepackage{bookmark}                      % segnalibri
+
+\usepackage{acronym}
+
+\input{impostazioni-tesi}                  % file con le impostazioni personali
+
+
+\begin{document}
+\pagenumbering{roman}
+\pagestyle{plain}
+
+%******************************************************************
+% Materiale iniziale
+%******************************************************************
+\input{MaterialeInizialeFinale/Frontespizio}
+%\input{MaterialeInizialeFinale/Colophon}
+\input{MaterialeInizialeFinale/Dedica}
+\input{MaterialeInizialeFinale/Indici}
+\input{MaterialeInizialeFinale/Sommario+Abstract}
+%\input{MaterialeInizialeFinale/Ringraziamenti}
+\input{MaterialeInizialeFinale/Introduzione}
+\pagestyle{scrheadings} 
+\cleardoublepage
+%******************************************************************
+% Materiale principale
+%******************************************************************
+\pagenumbering{arabic}
+\input{Capitoli/uav}
+%\input{Capitoli/propagazione}
+\input{Capitoli/lte}
+\input{Capitoli/analisi}
+%\input{Capitoli/dem}
+%\input{Capitoli/copertura}
+\input{Capitoli/risultati}
+%\appendix
+%\input{Capitoli/Dolor}
+% *****************************************************************
+% Materiale finale
+%******************************************************************
+\input{MaterialeInizialeFinale/Bibliografia}
+%\input{MaterialeInizialeFinale/Dichiarazione}
+\end{document}

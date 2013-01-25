@@ -1,0 +1,16 @@
+41.900302,12.493093,41.900302,12.505132
+41.891308,12.493093,41.891308,12.505132
+
+center: 41.895805,12.499113
+
+passo_lati: 0.00004497
+passo_longi: 0.000060195
+
+Raggio medio = 363.9597
+Raggio medio percentile = 490
+
+Raggio medio pico = 282.0619
+Raggio medio percentile pico = 392.0459
+
+Raggio medio femto = 256.2801
+Raggio medio percentile femto = 365.2773

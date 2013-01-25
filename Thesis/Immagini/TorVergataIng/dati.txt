@@ -1,0 +1,16 @@
+XX,YY,41.858399029999994,12.628265805
+41.84945,12.616287,XX,YY
+
+center: 41.8539245,12.6222764
+
+passo_lati: 0.00004497
+passo_longi: 0.000060195 
+
+Raggio medio = 388.3664
+Raggio medio percentile = 506.1867
+
+Raggio medio pico = 384.704
+Raggio medio percentile pico = 503.3140
+
+Raggio medio femto = 386.0185
+Raggio medio percentile femto = 504.2321
